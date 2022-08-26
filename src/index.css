@@ -1,10 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100,400;700&display=swap');  */
-/* @import url('https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.0/slate/bootstrap.min.css'); */
-/* @import url('https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.0/darkly/bootstrap.min.css'); */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css');
-
-
-
 
 *{
     margin: 0;
@@ -28,7 +22,14 @@ body{
     border-radius: 20px;
 }
 
-
+h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    color:#85C6FF;
+    margin-bottom:30px;
+    font-size:3rem!important;
+    text-align: center;
+} 
 
 
 
@@ -60,18 +61,11 @@ h1 {
     text-align: center;
     font-size: 4.8rem!important;
 }
-/* h2 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 100;
-    color:#004e92;
-    margin-bottom:30px;
-    font-size:3rem!important;
-    text-align: center;
-} */
-.campo {
+
+/* .campo {
     margin-bottom: 2rem;
-}
-.error {
+} */
+/* .error {
     text-align: center;
 }
 .alert {
@@ -80,7 +74,7 @@ h1 {
     margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: .25rem;
-}
+} */
 .alert-primary {
     color: #004085;
     background-color: #cce5ff;
@@ -95,7 +89,7 @@ h1 {
     color: #721c24;
     background-color: #f8d7da;
     border-color: #f5c6cb;
-}
+} 
 .alert-warning {
     color: #856404;
     background-color: #fff3cd;

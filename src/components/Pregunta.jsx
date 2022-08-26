@@ -3,7 +3,7 @@ import Styles from './Pregunta.module.css'
 import Error from './Error';
 
 
-const Pregunta = () => {
+const Pregunta = ({setPresupuesto,setRestante,setMostrarPregunta}) => {
     //Defninir useState
     const [cantidad, setCantidad] = useState(0);
     const [error, setError] = useState(false);
@@ -18,14 +18,23 @@ const Pregunta = () => {
         //Validar
         if (cantidad <= 0 || isNaN(cantidad)) {
             setError(true);
+            setMostrarPregunta(true);
             return;
         }
         setError(false);
+        setMostrarPregunta(false);
+        setPresupuesto(cantidad); //Se las mandamos al state de "App"
+        setRestante(cantidad);
     }
+
+
+    
     return (
         <>
             <h2 className={Styles.h2_titular}>Coloca tu Presupuesto </h2>
             
+            {error? <Error mensaje='El Preuspuesto es incorrecto'/> : null}
+
             <form action="" onSubmit={submintHandler}>
                 <input 
                     type="number" 
@@ -41,7 +50,6 @@ const Pregunta = () => {
                     value="Definir Presupuesto" 
                 />
             </form>
-            {error? <Error mensaje='El Preuspuesto es incorrecto'/> : null}
         </>
     );
 }
