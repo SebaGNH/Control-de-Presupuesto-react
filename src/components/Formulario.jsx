@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
 import Styles from './Formulario.module.css'
 import Error from './Error';
-const Formulario  = () => {
+import shortid from 'shortid';
+
+
+const Formulario  = ({agregarNuevoGasto,setGasto,setCrearGasto,restante,setRestante,gastos}) => {
     const [nombreGasto, setNombreGasto] = useState('');  
-    const [cantidadGasto,setCantidadGasto] = useState(0);
+    const [cantidadGasto,setCantidadGasto] = useState('');
     const [errorFormulario, setErrorFormulario] = useState(false);
 
     const definirNombreGasto = (e)=>{
@@ -19,12 +22,32 @@ const Formulario  = () => {
 
         //Validación
         if (nombreGasto.trim() === "" || cantidadGasto <= 0 || isNaN(cantidadGasto)) {
-            setErrorFormulario(true);
+            console.log("restante" + restante)
+            setErrorFormulario(true);            
             return;
         }
         setErrorFormulario(false);
+        
 
         //Construir gasto
+        const gasto = {
+            id: shortid.generate(),
+            nombreGasto,
+            cantidadGasto
+        }
+
+        //Pasar gasto al componente principal 'App.js'
+        //agregarNuevoGasto(gasto);
+        setGasto(gasto);
+        setCrearGasto(true); //Una vez que se genere el gasto pasa a true
+
+        //Limpiar Formulario
+        setNombreGasto("");
+        setCantidadGasto("");
+
+        //Caclular restante
+        //setRestante(restante - cantidadGasto);
+        
     }
 
 
@@ -39,6 +62,7 @@ const Formulario  = () => {
                     <input 
                         type="text" 
                         name="" 
+                        value={nombreGasto}
                         className='u-full-width'
                         placeholder='Ej. Transporte'
                         onChange={definirNombreGasto}                          
@@ -50,6 +74,7 @@ const Formulario  = () => {
                     <input 
                         type="number" 
                         name="" 
+                        value={cantidadGasto}
                         className='u-full-width'
                         placeholder='Ej. 300'  
                         onChange={definirCantidadGasto}                           
