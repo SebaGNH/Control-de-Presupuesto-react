@@ -1,4 +1,5 @@
 import React, {useState} from 'react'   
+import PropTypes from 'prop-types'
 import Styles from './Pregunta.module.css'
 import Error from './Error';
 
@@ -53,4 +54,12 @@ const Pregunta = ({setPresupuesto,setRestante,setMostrarPregunta}) => {
         </>
     );
 }
+
+
+Pregunta.propTypes = {
+    setPresupuesto: PropTypes.func.isRequired,
+    setRestante: PropTypes.func.isRequired,
+    setMostrarPregunta: PropTypes.func.isRequired,
+}
+
 export default Pregunta;

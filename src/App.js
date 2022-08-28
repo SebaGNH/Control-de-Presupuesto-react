@@ -4,6 +4,7 @@ import Formulario from './components/Formulario';
 import Listado from './components/Listado';
 import ControlPresupuesto from './components/ControlPresupuesto';
 
+
 const App = () => {
     //Definir el state
     const[presupuesto, setPresupuesto] = useState(0);
@@ -27,7 +28,7 @@ const App = () => {
 
         //Resetear a false una vez que se ejecute
         setCrearGasto(false);     
-    },[gasto]);
+    },[gasto, crearGasto,gastos]); // [gasto] Tenía solo este,pero me daba alertas "Warning" para que también controle esos
 
 
 

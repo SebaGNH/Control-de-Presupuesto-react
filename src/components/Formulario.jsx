@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import PropTypes from 'prop-types'
 import Styles from './Formulario.module.css'
 import Error from './Error';
 import shortid from 'shortid';
@@ -22,7 +23,6 @@ const Formulario  = ({agregarNuevoGasto,setGasto,setCrearGasto,restante,setResta
 
         //Validación
         if (nombreGasto.trim() === "" || cantidadGasto <= 0 || isNaN(cantidadGasto)) {
-            console.log("restante" + restante)
             setErrorFormulario(true);            
             return;
         }
@@ -90,4 +90,10 @@ const Formulario  = ({agregarNuevoGasto,setGasto,setCrearGasto,restante,setResta
         </>
     );
 }
+Formulario.propTypes = {
+    setGasto: PropTypes.func.isRequired,
+    setCrearGasto: PropTypes.func.isRequired
+}
+
+
 export default Formulario ;

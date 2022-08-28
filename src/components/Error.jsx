@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import Styles from './Error.module.css';
 
 
@@ -12,4 +13,8 @@ const Error = ({mensaje}) => {
 }
 
 //'alert alert-danger error'
+
+Error.propTypes = {
+    mensaje: PropTypes.string.isRequired
+}
 export default Error;
