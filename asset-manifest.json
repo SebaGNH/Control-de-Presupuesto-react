@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.2dc01d99.css",
-    "main.js": "/static/js/main.e4ea210f.js",
-    "index.html": "/index.html",
-    "main.2dc01d99.css.map": "/static/css/main.2dc01d99.css.map",
-    "main.e4ea210f.js.map": "/static/js/main.e4ea210f.js.map"
+    "main.css": "/Control-de-Presupuesto-react/static/css/main.2dc01d99.css",
+    "main.js": "/Control-de-Presupuesto-react/static/js/main.e4ea210f.js",
+    "index.html": "/Control-de-Presupuesto-react/index.html",
+    "main.2dc01d99.css.map": "/Control-de-Presupuesto-react/static/css/main.2dc01d99.css.map",
+    "main.e4ea210f.js.map": "/Control-de-Presupuesto-react/static/js/main.e4ea210f.js.map"
   },
   "entrypoints": [
     "static/css/main.2dc01d99.css",
